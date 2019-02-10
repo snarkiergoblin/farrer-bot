@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const {google} = require('googleapis')
 
 const gApi = require('./sheetsapi.js')
 
@@ -32,4 +31,5 @@ NEVANS CAR`); break;
     }
 })
 
+if(!process.env["discord_key"]) console.log("no key found")
 client.login(process.env["discord_key"])
