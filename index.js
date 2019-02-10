@@ -33,6 +33,9 @@ NEVANS CAR`); break;
             .replace(new RegExp('shit', 'g'), 'poop')
             +"*")
     }
+    if(msg.content.includes('r/')) {
+        msg.channel.send("http://reddit.com/"+msg.content.match("r/[_\w]+"))
+    }
 })
 
 if(!process.env["discord_key"]) console.log("no key found")
