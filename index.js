@@ -20,8 +20,12 @@ Gooch is eternal. The pinnacle of evolution and existence.
 We are but rudimentary creatures of blood and flesh. We touch the mind of Gooch, fumbling in ignorance, incapable of understanding.
 Organic life is nothing but a genetic mutation, an accident. Our lives are measured in years and decades. We wither and die. Gooch is eternal. Before it, we are nothing.
 Gooch imposes order on the chaos of organic life. We exist because Gooch allows it, and we will end because Gooch demands it.
-Gooch transcends our very understanding. We cannot grasp the nature of the existence of Gooch")
+Gooch transcends our very understanding. We cannot grasp the nature of the existence of Gooch.
 `); break;
+            case 'nevans': msg.channel.send(`NEVANS CAR
+
+NEVANS CAR`); break;
+            
         }
     }
 })
