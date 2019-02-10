@@ -1,5 +1,8 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
+const {google} = require('googleapis')
+
+const gApi = require('./sheetsapi.js')
 
 client.on('ready', () => {
     console.log(`logged on as ${client.user.tag}.`)
