@@ -28,7 +28,7 @@ NEVANS CAR`); break;
         }
     }
     if(msg.content.includes('fuck') || msg.content.includes('hell')) {
-        msg.channel.send(msg.content.replace('fuck', 'frick').replace('hell', 'heck')+"*")
+        msg.channel.send(msg.content.replace(new RegExp('fuck', 'g'), 'frick').replace(new RegExp('hell', 'g'), 'heck').replace(new RegExp('shit', 'g'), 'poop')+"*")
     }
 })
 
