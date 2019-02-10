@@ -11,6 +11,7 @@ client.on('message', msg => {
         switch(command) {
             case 'help': msg.channel.send('no u'); break;
             case 'crewlist': msg.channel.send('https://docs.google.com/spreadsheets/d/1eZpNToP9dqIbEykBOal6z_OaFfaWKDTtnJXfKunebsc/edit?usp=sharing')
+            case 'tea': msg.channel.send('T I M E F O R T E A'); break;
         }
     }
 })
