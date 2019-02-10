@@ -26,7 +26,7 @@ Gooch transcends our very understanding. We cannot grasp the nature of the exist
 NEVANS CAR`); break;
         }
     }
-    if(msg.content.includes('fuck') || msg.content.includes('hell')) {
+    if(msg.content.includes('fuck') || msg.content.includes('hell') || msg.content.includes("shit")) {
         msg.channel.send(msg.content
             .replace(new RegExp('fuck', 'g'), 'frick')
             .replace(new RegExp('hell', 'g'), 'heck')
