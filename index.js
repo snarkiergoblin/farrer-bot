@@ -8,6 +8,7 @@ client.on('ready', () => {
 })
 
 client.on('message', msg => {
+    if(msg.author.bot) return;
     if(msg.content[0] === '!') {
         command = msg.content.slice(1)
         switch(command) {
@@ -28,9 +29,9 @@ NEVANS CAR`); break;
     }
     if(msg.content.toLowerCase().includes('fuck') || msg.content.toLowerCase().includes('hell') || msg.content.toLowerCase().includes("shit")) {
         msg.channel.send(msg.content
-            .replace(new RegExp('fuck', 'g'), 'frick')
-            .replace(new RegExp('hell', 'g'), 'heck')
-            .replace(new RegExp('shit', 'g'), 'poop')
+            .replace(new RegExp('[fF][uU][cC][kK]\s', 'g'), 'frick')
+            .replace(new RegExp('[hH][eE][lL][lL]\s', 'g'), 'heck')
+            .replace(new RegExp('[sS][hH][iI][tT]\s', 'g'), 'poop')
             +"*")
     }
     if(msg.content.includes('r/')) {
