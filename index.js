@@ -23,8 +23,11 @@ Gooch imposes order on the chaos of organic life. We exist because Gooch allows 
 Gooch transcends our very understanding. We cannot grasp the nature of the existence of Gooch.
 `); break;
             case 'nevans': msg.channel.send(`NEVANS CAR
-
-NEVANS CAR`); break;
+  ______
+ /|_||_\`.__
+(   _    _ _\
+='-(_)--(_)-'
+NEVANS CAR`, { code: true }); break;
         }
     }
     if(msg.content.toLowerCase().match('\\bfuck', 'g') || msg.content.toLowerCase().match('\\bhell\\b', 'g') || msg.content.toLowerCase().match('\\bshit', 'g')) {
