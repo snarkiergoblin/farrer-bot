@@ -57,7 +57,7 @@ let rules = [
     "9) Have fun!"
 ]
 addCommand('rules', (msg) => {
-    if(!msg.member.roles.find("name", "Senior Tech")) return;
+    if(!msg.member.roles.find(val => val.name === "Senior Tech")) return;
     if(msg.content.split(" ").length == 1) {
         msg.channel.send(rules.reduce((prev, curr) => prev + "\n" + curr), { code: true });
     } else if (Number.parseInt(msg.content.split(" ")[1])) {
