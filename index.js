@@ -29,9 +29,9 @@ NEVANS CAR`); break;
     }
     if(msg.content.toLowerCase().includes('fuck') || msg.content.toLowerCase().includes('hell') || msg.content.toLowerCase().includes("shit")) {
         msg.channel.send(msg.content
-            .replace(new RegExp('\b[fF][uU][cC][kK]\b', 'g'), 'frick')
-            .replace(new RegExp('\b[hH][eE][lL][lL]\b', 'g'), 'heck')
-            .replace(new RegExp('\b[sS][hH][iI][tT]\b', 'g'), 'poop')
+            .replace(new RegExp('\\b[fF][uU][cC][kK]\\b', 'g'), 'frick')
+            .replace(new RegExp('\\b[hH][eE][lL][lL]\\b', 'g'), 'heck')
+            .replace(new RegExp('\\b[sS][hH][iI][tT]\\b', 'g'), 'poop')
             +"*")
     }
     if(msg.content.includes('r/')) {
