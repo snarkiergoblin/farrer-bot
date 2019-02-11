@@ -10,8 +10,8 @@ export function addCommand(name: string, callback: (msg: Message) => void) {
 }
 
 export function performCommand(name: string, msg: Message) {
-    if(Object.keys(commands).includes(name)) {
-        commands[name].callback(msg);
+    if(Object.keys(commands).includes(name.toLowerCase())) {
+        commands[name.toLowerCase()].callback(msg);
     } else {
         msg.reply("No such command found.")
     }
