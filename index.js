@@ -25,7 +25,7 @@ Gooch transcends our very understanding. We cannot grasp the nature of the exist
             case 'nevans': msg.channel.send(`NEVANS CAR
   ______
  /|_||_\`.__
-(   _    _ _\
+(   _    _ _)
 ='-(_)--(_)-'
 NEVANS CAR`, { code: true }); break;
         }
