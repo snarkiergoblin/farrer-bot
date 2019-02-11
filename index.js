@@ -38,8 +38,8 @@ NEVANS CAR`, { code: true }); break;
             +"*")
     }
     if(msg.content.includes('r/')) {
-        console.log(msg.content.match("r/[_\w]+"))
-        msg.channel.send("http://reddit.com/"+msg.content.match("r/[_\w]+"))
+        console.log(msg.content.match("r/[_\\w]+"))
+        msg.channel.send("http://reddit.com/"+msg.content.match("r/[_\\w]+"))
     }
 })
 
