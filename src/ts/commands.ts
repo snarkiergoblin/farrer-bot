@@ -3,7 +3,7 @@ import { Message } from 'discord.js';
 interface Command {
     callback: (msg: Message) => void
 }
-let commands: { [name: string]: Command }
+let commands: { [name: string]: Command } = {}
 
 export function addCommand(name: string, callback: (msg: Message) => void) {
     commands[name] = { callback: callback } as Command;
