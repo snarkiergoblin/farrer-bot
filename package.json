@@ -2,15 +2,17 @@
   "name": "farrer-bot",
   "version": "1.0.0",
   "description": "The bot for the Farrer Theatre Discord.",
-  "main": "index.js",
+  "main": "src/js/index.js",
   "scripts": {
-    "start": "node index.js",
-    "prestart": "npm install"
+    "start": "node src/js/index.js",
+    "prestart": "npm install && tsc"
   },
   "author": "William Gooch",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^10.12.24",
     "discord.js": "^11.4.2",
-    "googleapis": "^27.0.0"
+    "googleapis": "^27.0.0",
+    "typescript": "^3.3.3"
   }
 }

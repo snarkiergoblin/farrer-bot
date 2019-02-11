@@ -10,7 +10,7 @@ client.on('ready', () => {
 client.on('message', msg => {
     if(msg.author.bot) return;
     if(msg.content[0] === '!') {
-        command = msg.content.slice(1)
+        var command = msg.content.slice(1)
         switch(command) {
             case 'help': msg.channel.send('no u'); break;
             case 'crewlist': msg.channel.send('https://docs.google.com/spreadsheets/d/1eZpNToP9dqIbEykBOal6z_OaFfaWKDTtnJXfKunebsc/edit?usp=sharing'); break;
