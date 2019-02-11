@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { Message, User } from 'discord.js';
 
 interface Command {
     callback: (msg: Message) => void
@@ -10,7 +10,11 @@ export function addCommand(name: string, callback: (msg: Message) => void) {
 }
 
 export function performCommand(name: string, msg: Message) {
-    commands[name].callback(msg);
+    if(Object.keys(commands).includes(name)) {
+        commands[name].callback(msg);
+    } else {
+        msg.reply("No such command found.")
+    }
 }
 
 addCommand('help', (msg) => { msg.channel.send('no u') });
@@ -33,3 +37,30 @@ addCommand('nevans', (msg) => { msg.channel.send(
   ='-(_)--(_)-'
 NEVANS CAR`
 , { code: true }) })
+addCommand('kill', (msg) => {
+    msg.mentions.users.forEach((user: User) => {
+        user.send("", { embed: {
+            image: { url: "http://scp-wiki.wdfiles.com/local--resized-images/scp-001/fractal001/medium.jpg" }
+        }})
+    })
+})
+
+let rules = [
+    "1) Don't spam (obviously).",
+    "2) Use the right channels.",
+    "3) Post your full name to #names-to-usernames so we know who you are.",
+    "4) Respect the admins.",
+    "5) Nothing that isn't safe for the school (NSFW or offensive content) is allowed, even as a joke.",
+    "6) No rants in french",
+    "7) No bot spam outside of #bot-testing",
+    "8) Stay in your own departmental channels.",
+    "9) Have fun!"
+]
+addCommand('rules', (msg) => {
+    if(!msg.member.roles.find("name", "Senior Tech")) return;
+    if(msg.content.split(" ").length == 1) {
+        msg.channel.send(rules.reduce((prev, curr) => prev + "\n" + curr), { code: true });
+    } else if (Number.parseInt(msg.content.split(" ")[1])) {
+        msg.channel.send(rules[Number.parseInt(msg.content.split(" ")[1])-1], {code: true})
+    }
+})
