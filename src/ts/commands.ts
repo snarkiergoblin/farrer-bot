@@ -48,6 +48,7 @@ addCommand('kill', (msg) => {
         }})
     })
 })
+addCommand('thog', (msg) => { msg.channel.send("thog don't caaare") })
 
 let rules = [
     "1) Don't spam (obviously).",
