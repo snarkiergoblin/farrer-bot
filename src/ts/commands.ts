@@ -37,6 +37,10 @@ addCommand('nevans', (msg) => { msg.channel.send(
   ='-(_)--(_)-'
 NEVANS CAR`
 , { code: true }) })
+addCommand('badboy', (msg) => { msg.channel.send(
+`I consider my maturity as above average for my age groups
+my eloquence is unmatched among my peers`
+) })
 addCommand('kill', (msg) => {
     msg.mentions.users.forEach((user: User) => {
         user.send("", { embed: {
