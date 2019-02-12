@@ -26,6 +26,13 @@ client.on('message', msg => {
         console.log(msg.content.match("r/[_\\w]+"))
         msg.channel.send("http://reddit.com/"+msg.content.match("r/[_\\w]+"))
     }
+    if(msg.content.toLowerCase().includes('surely')) {
+        msg.channel.send("don't call me shirley")
+    }
+    if(msg.content.toLowerCase().includes('shirley')) {
+        msg.channel.send("don't call me surely")
+    }
+    
 })
 
 if(!process.env["discord_key"]) console.log("no key found")
