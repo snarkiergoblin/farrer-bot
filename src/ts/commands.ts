@@ -59,7 +59,8 @@ let rules = [
     "6) No rants in french",
     "7) No bot spam outside of #bot-testing",
     "8) Stay in your own departmental channels.",
-    "9) Have fun!"
+    "9) Have fun!",
+    "10) Don't pirate games."
 ]
 addCommand('rules', (msg) => {
     if(!msg.member.roles.find(val => val.name === "Senior Tech")) return;
