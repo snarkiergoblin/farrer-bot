@@ -11,7 +11,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     if(msg.author.bot) return;
-    if(msg.content[0] === '!') {
+    if(msg.content[0] === '~') {
         var command = (msg.content as String).split(" ")[0].slice(1)
         performCommand(command, msg)
     }
