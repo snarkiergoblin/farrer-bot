@@ -9,8 +9,6 @@ client.on('ready', () => {
     console.log(`logged on as ${client.user.tag}.`)
 })
 
-
-
 client.on('message', msg => {
     if (msg.member.roles.exists('name', 'Jeff')) return
     if (msg.member.roles.exists('name', 'Oob')) return
