@@ -4,8 +4,6 @@ const client = new Discord.Client()
 import { addCommand, performCommand } from './commands'
 
 const gApi = require('./sheetsapi.js')
-var jeffRole = '';
-var oobRole = '';
 
 client.on('ready', () => {
     console.log(`logged on as ${client.user.tag}.`)
