@@ -4,12 +4,21 @@ const client = new Discord.Client()
 import { addCommand, performCommand } from './commands'
 
 const gApi = require('./sheetsapi.js')
+var jeffRole = '';
+var oobRole = '';
 
 client.on('ready', () => {
     console.log(`logged on as ${client.user.tag}.`)
 })
 
+
+
 client.on('message', msg => {
+    jeffRole = message.guild.roles.find("name", "Jeff");
+    oobRole = message.guild.roles.find("name", "Oob");
+    if (message.member.roles.has(jeffRole.id)) return
+    if (message.member.roles.has(oobRole.id)) return
+
     if(msg.author.bot) return;
     if(msg.content[0] === '~') {
         var command = (msg.content as String).split(" ")[0].slice(1)
