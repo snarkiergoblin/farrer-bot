@@ -16,8 +16,8 @@ client.on('ready', () => {
 client.on('message', msg => {
     jeffRole = msg.guild.roles.find("name", "Jeff");
     oobRole = msg.guild.roles.find("name", "Oob");
-    if (msg.member.roles.has(jeffRole.id)) return
-    if (msg.member.roles.has(oobRole.id)) return
+    if (msg.member.roles.has(jeffRole)) return
+    if (msg.member.roles.has(oobRole)) return
 
     if(msg.author.bot) return;
     if(msg.content[0] === '~') {
