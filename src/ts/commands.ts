@@ -1,4 +1,5 @@
 import { Message, User } from 'discord.js';
+import * as request from 'request'
 
 interface Command {
     callback: (msg: Message) => void
@@ -69,4 +70,20 @@ addCommand('rules', (msg) => {
     } else if (Number.parseInt(msg.content.split(" ")[1])) {
         msg.channel.send(rules[Number.parseInt(msg.content.split(" ")[1])-1], {code: true})
     }
+})
+addCommand('server', (msg) => {
+    request('https://api.mcsrvstat.us/1/farrerbois.aternos.me', (error, response, body) => {
+        if(error) console.log('error: ', error);
+        var data = JSON.parse(body);
+        if(data["version"] === "Offline") {
+            msg.channel.send("Server is offline.")
+        } else {
+            msg.channel.send(
+`Server is online!
+Players: ${data["players"]["online"]} / ${data["players"]["max"]}
+    ${data["players"]["list"].reduce((prev, curr) => prev + "\n    " + curr)}
+MOTD: ${data["motd"]["clean"]}
+`, { code: true })
+        }
+    })
 })
