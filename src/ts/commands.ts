@@ -72,18 +72,15 @@ addCommand('rules', (msg) => {
     }
 })
 addCommand('server', (msg) => {
-    request('https://api.mcsrvstat.us/1/farrerbois.aternos.me', (error, response, body) => {
-        if(error) console.log('error: ', error);
-        var data = JSON.parse(body);
-        if(data["version"] === "Offline") {
-            msg.channel.send("Server is offline.")
-        } else {
-            msg.channel.send(
-`Server is online!
-Players: ${data["players"]["online"]} / ${data["players"]["max"]}
-    ${data["players"]["list"].reduce((prev, curr) => prev + "\n    " + curr)}
-MOTD: ${data["motd"]["clean"]}
-`, { code: true })
-        }
+    msg.channel.send("Checking server status...").then((message: Message) => {
+        request('https://api.mcsrvstat.us/1/farrerbois.aternos.me', (error, response, body) => {
+            if(error) console.log('error: ', error);
+            var data = JSON.parse(body);
+            if(data["version"] === "Offline") {
+                message.edit("Server is offline.")
+            } else {
+                message.edit(`Server is online!\nPlayers: ${data["players"]["online"]} / ${data["players"]["max"]}\n${data["players"]["list"].reduce((prev, curr) => prev + "\n    " + curr)}\nMOTD: ${data["motd"]["clean"]}`, { code: true })
+            }
+        })
     })
 })
