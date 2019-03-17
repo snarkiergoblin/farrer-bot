@@ -78,6 +78,8 @@ addCommand('server', (msg) => {
             var data = JSON.parse(body);
             if(data["version"] === "Offline") {
                 message.edit("Server is offline.")
+            } else if (data["version"] === "") {
+                message.edit("Server is starting...")
             } else {
                 message.edit(`Server is online!\nPlayers: ${data["players"]["online"]} / ${data["players"]["max"]}\n${data["players"]["list"].reduce((prev, curr) => prev + "\n    " + curr)}\nMOTD: ${data["motd"]["clean"]}`, { code: true })
             }
