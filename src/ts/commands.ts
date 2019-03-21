@@ -49,6 +49,13 @@ addCommand('kill', (msg) => {
         }})
     })
 })
+addCommand('webbo', (msg) => {
+    if(msg.mentions.members.size == 0) {
+        msg.channel.send(`${msg.member.displayName} is so low-effort shitpost.`)
+    } else {
+        msg.channel.send(`${msg.mentions.members.first().displayName} is so low-effort shitpost.`)
+    }
+}
 addCommand('thog', (msg) => { msg.channel.send("thog don't caaare") })
 
 let rules = [
