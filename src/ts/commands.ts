@@ -96,7 +96,7 @@ addCommand('server', (msg) => {
 function sendMoross(msg, count) {
     msg.channel.send("<@!448593149712007168> " + count)
     if(count > 0) {
-        setTimeout(() => sendMoross(msg, count - 1), 1)
+        setTimeout(() => sendMoross(msg, count - 1), 500)
     }
 }
 addCommand('moross', (msg) => {
