@@ -103,4 +103,4 @@ addCommand('moross', (msg) => {
     if(msg.channel.name == "moross") {
         sendMoross(msg, 100)
     }
-}
+})
