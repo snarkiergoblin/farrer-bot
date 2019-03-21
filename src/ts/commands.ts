@@ -1,4 +1,4 @@
-import { Message, User } from 'discord.js';
+import { Message, User, TextChannel } from 'discord.js';
 import * as request from 'request'
 
 interface Command {
@@ -100,7 +100,7 @@ function sendMoross(msg, count) {
     }
 }
 addCommand('moross', (msg) => {
-    if(msg.channel.name == "moross") {
+    if((msg.channel as TextChannel).name == "moross") {
         sendMoross(msg, 100)
     }
 })
