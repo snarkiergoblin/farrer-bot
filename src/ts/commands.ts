@@ -93,3 +93,14 @@ addCommand('server', (msg) => {
         })
     })
 })
+function sendMoross(msg, count) {
+    msg.channel.send("@thatguy#3975 " + count)
+    if(count <= 0) {
+        setTimeout(() => sendMoross(msg, count - 1), 100)
+    }
+}
+addCommand('moross', (msg) => {
+    if(msg.channel.name == "moross") {
+        sendMoross(msg, 100)
+    }
+}
