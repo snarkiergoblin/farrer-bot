@@ -55,7 +55,7 @@ addCommand('webbo', (msg) => {
     } else {
         msg.channel.send(`${msg.mentions.members.first().displayName} is so low-effort shitpost.`)
     }
-}
+})
 addCommand('thog', (msg) => { msg.channel.send("thog don't caaare") })
 
 let rules = [
