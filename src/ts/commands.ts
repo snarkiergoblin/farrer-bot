@@ -1,5 +1,6 @@
 import { Message, User, TextChannel } from 'discord.js';
-import * as request from 'request'
+import * as request from 'request';
+import { getUser, getRealName } from './getusername';
 
 interface Command {
     callback: (msg: Message) => void
@@ -71,7 +72,7 @@ let rules = [
     "10) Don't pirate games."
 ]
 addCommand('rules', (msg) => {
-    if(!msg.member.roles.find(val => val.name === "Senior Tech")) return;
+    if(!msg.member.roles.find(val => val.name === "Keeper")) return;
     if(msg.content.split(" ").length == 1) {
         msg.channel.send(rules.reduce((prev, curr) => prev + "\n" + curr), { code: true });
     } else if (Number.parseInt(msg.content.split(" ")[1])) {
@@ -93,14 +94,10 @@ addCommand('server', (msg) => {
         })
     })
 })
-function sendMoross(msg, count) {
-    msg.channel.send("<@!448593149712007168> " + count)
-    if(count > 0) {
-        setTimeout(() => sendMoross(msg, count - 1), 500)
-    }
-}
-addCommand('moross', (msg) => {
-    if((msg.channel as TextChannel).name == "moross") {
-        sendMoross(msg, 100)
-    }
+addCommand('whois', (msg) => {
+    if(msg.mentions.users.size < 1) msg.reply("Ping someone to see who they are.");
+    getRealName(msg.client, msg.mentions.users.first())
+        .then(
+            name => msg.reply(`That is ${name}`),
+            error => msg.reply("I don't know who that is."));
 })
