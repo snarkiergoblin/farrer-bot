@@ -16,13 +16,15 @@ client.on('message', msg => {
         var command = (msg.content as String).split(" ")[0].slice(1)
         performCommand(command, msg)
     }
-    if(msg.content.toLowerCase().match(/\bfuck/g) || msg.content.toLowerCase().match(/\bhell/g) || msg.content.toLowerCase().match(/\bshit/g)) {
+    /*
+    if(msg.content.toLowerCase().match(/\bfuck/g) || msg.content.toLowerCase().match(/\bhell\\b/g) || msg.content.toLowerCase().match(/\bshit/g)) {
         msg.channel.send(msg.content
             .replace(new RegExp(/\b[fF][uU][cC][kK]/g), 'frick')
             .replace(new RegExp(/\b[hH][eE][lL][lL]\\b/g), 'heck')
             .replace(new RegExp(/\b[sS][hH][iI][tT]/g), 'poop')
             +"*")
     }
+    */
     if(msg.content.includes('r/')) {
         console.log(msg.content.match("r/[_\\w]+"))
         msg.channel.send("http://reddit.com/"+msg.content.match("r/[_\\w]+"))
