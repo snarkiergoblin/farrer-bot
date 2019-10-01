@@ -70,6 +70,7 @@ let rules = [
     "8) Stay in your own departmental channels.",
     "9) Have fun!",
     "10) Don't pirate games."
+    "11) 🦀 server is dead 🦀"
 ]
 addCommand('rules', (msg) => {
     if(!msg.member.roles.find(val => val.name === "Keeper")) return;
